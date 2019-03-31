@@ -1,1 +1,214 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: 'Milonga', cursive;
+  margin: 0;
+  padding: 0em;
+}
+
+h1 {
+  font-size: 32px;
+  padding: 15px 0;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Sunshiney', cursive;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img,
+embed,
+iframe,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+body {
+  background-image: url(assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
+}
+
+p {
+  font-size: 24px;
+}
+
+.input-wrap {
+  display: table;
+
+
+  &.name {
+    position: relative;
+    margin: 50px auto 0;
+  }
+
+  &.error input::placeholder {
+    color: rgb(255, 223, 0);
+  }
+}
+
+input {
+  font-family: 'Sunshiney', cursive;
+  font-size: 26px;
+  padding: 8px 15px;
+  background: rgba(62, 37, 0, 0.2);
+  border: 4px solid #a57304;
+  color: #fff;
+  text-align: center;
+  border-style: double;
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #856512;
+    opacity: 1; /* Firefox */
+  }
+
+  &:focus {
+    outline: none !important;
+    border: 4px solid #fbb500;
+    border-style: double;
+    background: rgba(62, 37, 0, 0.3);
+  }
+
+}
+
+.input-styling {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:before {
+    content: "";
+    background-image: url(/assets/border-left.png);
+    height: 80px;
+    width: 81px;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    background-size: contain;
+    left: -32px;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    content: "";
+    background-image: url(/assets/border-right.png);
+    height: 80px;
+    width: 81px;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    background-size: contain;
+    right: -32px;
+    background-repeat: no-repeat;
+  }
+}
+
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.stats__tooltip {
+  background: rgb(46, 38, 24);
+  font-family: 'Sunshiney', cursive;
+  font-size: 19px;
+  width: 100%;
+  text-align: center;
+}
+
+.quests__scrollbar {
+  display: block;
+  overflow: hidden;
+  --scrollbar-color: #ffffff8c!important;
+  --scrollbar-container-color: #94580200!important;
+  --scrollbar-thumb-color: #6c4002e0!important;
+  --scrollbar-thumb-hover-color: #6c4002!important;
+  --scrollbar-border-radius: 6px;
+  --scrollbar-size: 8px!important;
+  --scrollbar-padding: 0px;
+  --scroll-view-margin: 0px;
+  --scroll-view-color: #ab272700;
+
+  & .scroll-bar {
+    box-shadow: inset 0 0 0 2px #fff;
+  }
+}

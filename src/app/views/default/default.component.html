@@ -1,0 +1,68 @@
+<div class="wrap">
+    <div class="content">
+        <div class="default">
+            <div class="messages">
+                <h1>Greetings, {{name}}!</h1>
+                <p *ngIf="turn == 0">The Prince of Northern Kingdom has sent us a young dragon. <br>
+                    You have been chosen to take a good care of her. Now go and be successful!
+                </p>
+                <p *ngIf="gold > 0 && gold < 100 && turn !== 0 ">
+                    Sir, the dragon doesn't come cheap. We need you to make yourself useful. No go!
+                </p>
+                <p *ngIf="gold > 100 && gold < 300">
+                    Good, but that is just the beginning. Best of luck!
+                </p>
+                <p *ngIf="gold > 300 && gold < 500">
+                    You have done well, my sire. But the glory still waits ahead.
+                </p>
+                <p *ngIf="gold > 500 && gold < 1000">
+                    Yes! Yes! It is all going very well. But there is still things to do, before you can retire!
+                </p>
+                <p *ngIf="gold > 1000">
+                    It is an honour, sir! How may I serve you? There are still quests for you, which may help to alleviate some boredom.
+                </p>
+            </div>
+
+            <div class="actions">
+                <h3>Pick an action</h3>
+                <div class="actions__picks">
+
+                    <div class="actions__picks-item" (click)="pickQuest()">
+                        <div class="actions__picks-title">
+                            Pick a quest
+                        </div>
+                        <div class="actions__picks-desc">
+                            <p>Quests bring you fame and glory. <br>
+                                Also, you need to complete them to get money.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="actions__picks-item" (click)="shopping()">
+                        <div class="actions__picks-title">
+                            Go shopping
+                        </div>
+                        <div class="actions__picks-desc">
+                            <p>Merchants come here from all over the world. <br>
+                                Items help you to progress faster, and make you stronger!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="actions__picks-item" (click)="investigate()">
+                        <div class="actions__picks-title">
+                            Investigation
+                        </div>
+                        <div class="actions__picks-desc">
+                            <p>The people have been talking... <br>
+                                Go to the Tavern and find out, what is your reputation among different interest groups.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

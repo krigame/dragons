@@ -1,0 +1,93 @@
+.wrap {
+  padding: 0 90px;
+  display: block;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  padding-top: 100px;
+}
+
+.default {
+  text-align: center;
+
+& .messages {
+  margin-bottom: 30px;
+}
+
+  & .actions {
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &__picks {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        border: 4px solid #6c4002;
+        flex: 1;
+        padding: 20px 10px;
+        position: relative;
+        cursor: pointer;
+        transition: 0.2s all ease-in-out;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:before {
+          content: "";
+          background-image: url("/assets/quest-top.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 30px;
+          width: 30px;
+          position: absolute;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          top: -17px;
+          transition: 0.2s all ease-in-out;
+        }
+
+        &:hover {
+          box-shadow: 0 0 10px #000;
+
+          &:before {
+            filter: drop-shadow(0px -4px 4px #000);
+          }
+        }
+      }
+
+      &-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-family: 'Milonga', cursive;
+      }
+
+      &-desc {
+
+        & p {
+          font-size: 20px;
+          line-height: 18px;
+        }
+
+        & br {
+          display: block;
+          margin: 10px 0;
+          content: " ";
+
+        }
+      }
+    }
+  }
+}
+

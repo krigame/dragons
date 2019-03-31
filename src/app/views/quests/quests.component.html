@@ -1,0 +1,35 @@
+<div class="wrap">
+    <div class="content">
+        <div class="quests">
+            <div class="quests__return" (click)="continue()">Leave the message board</div>
+            <h1>Pick a quest, {{name}}</h1>
+
+            <div class="quests__wrap" style="height: 310px;">
+
+                <ng-scrollbar trackY="true" shown="always" class="quests__scrollbar">
+
+                    <div class="quests__item" *ngFor="let quest of quests; let indx = index" id="quest-{{indx}}" data-id="{{quest.adId}}" (click)="questPicked($event, quest.adId)">
+                        <div class="quests__message">
+                            {{quest.message}}
+                        </div>
+                        <div class="quests__reward">
+                            <div class="quests__item-title">Reward</div>
+                            <div class="quests__item-value">{{quest.reward}}</div>
+
+                        </div>
+                        <div class="quests__expires">
+                            <div class="quests__item-title">Expires in</div>
+                            <div class="quests__item-value">{{quest.expiresIn}} turns</div>
+                        </div>
+                        <div class="quests__prob">
+                            <div class="quests__item-title">Difficulty</div>
+                            <div class="quests__item-value">{{quest.probability}}</div>
+                        </div>
+                    </div>
+
+                </ng-scrollbar>
+
+            </div>
+        </div>
+    </div>
+</div>

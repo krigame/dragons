@@ -1,0 +1,29 @@
+<div class="wrap">
+  <div class="content">
+    <div class="shop">
+      <div class="shop__return" (click)="continue()">Return from shopping</div>
+      <h1>Buy it all, Sir!</h1>
+
+      <div class="shop__wrap" style="height: 310px;">
+
+        <ng-scrollbar trackY="true" shown="always" class="quests__scrollbar">
+
+          <div class="shop__item" *ngFor="let item of items; let indx = index" id="quest-{{indx}}" data-id="{{item.id}}" (click)="itemPurchased($event, item.id, item.cost)">
+            <div class="shop__name">
+              {{item.name}}
+            </div>
+            <div class="shop__warning" *ngIf="item.cost > gold">
+              Not enoug' dosh, Ye!!
+            </div>
+            <div class="shop__price">
+              <div class="shop__item-title">Price</div>
+              <div class="shop__item-value">{{item.cost}}</div>
+            </div>
+          </div>
+
+        </ng-scrollbar>
+
+      </div>
+    </div>
+  </div>
+</div>

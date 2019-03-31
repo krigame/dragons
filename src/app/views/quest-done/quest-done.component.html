@@ -1,0 +1,55 @@
+<div class="wrap">
+  <div class="content">
+    <div class="quest-done">
+
+
+
+      <div class="quest-done__wrap">
+
+        <div class="quest-done__header">
+          <h1 *ngIf="success">Good job, {{name}}!</h1>
+          <h1 *ngIf="!success">Uh oh... not good </h1>
+
+        </div>
+
+        <div class="quest-done__feedback">
+          <p>{{feedback}}</p>
+
+        </div>
+
+        <p *ngIf="lives === 0" style="font-size: 18px; margin-top: 20px;">
+            Three days have passed... you open your eyes and find yourself lying in a bed. The room looks familiar.
+          It is the same room you have stood many times while staying overnight in the Tavern. Suddenly you feel how the pain starts to creep in.
+          It seems to hurt all over your body - smashed ribs, broken left arm, couple of broken fingers on your right hand and as a bonus you find missing a big toenail;
+          hair feel also weird, it seems that at some point they were soaked by blood. Not your's blood perhaps, as you can't feel any head injuries being present. And then it hits you -
+          the last quest... You had managed to get out many difficult situations before, but this time you really tried to bite off more than you could chew. You took a risk, and it didn't
+          paid off. In the process you got your dragon killed and you yourself crashed down from a steep hillside. How you ended up in a Tavern, you don't know, but you can find out later.
+          It seems that you have lost everything... almost everything, as you still had yourself... alive. Not everything is lost indeed. You can still start all over again... Of course.<br>
+          Refresh your browser to start another journey.
+        </p>
+
+      </div>
+
+      <div class="quest-done__cta"  *ngIf="lives !== 0">
+        <div class="note">* your stats have been updated</div>
+
+        <div class="btn-wrap">
+          <a class="btn highlighted" href="#" (click)="pickAnotherQuest()">
+            Pick another quest
+            <div class="btn-style"></div>
+          </a>
+        </div>
+
+        <div class="btn-wrap">
+          <a class="btn highlighted" href="#" (click)="continue()">
+            Do something else
+            <div class="btn-style"></div>
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

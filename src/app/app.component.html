@@ -1,20 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="wrapper">
+    <div class="wrapper-inner">
+
+        <div class="logo">
+            <img src="/assets/logo.png">
+        </div>
+
+    <ng-container *ngIf="state === 0">
+
+
+        <div class="content">
+            <h1 style="margin-top: 60px;">
+                Welcome Traveller.
+            </h1>
+            <p style="margin-top: -20px; margin-bottom: 20px;">The dragons await ye.</p>
+
+            <div class="input-wrap name" [class.error]="nameError">
+                <input [(ngModel)]="playerName" type="text" placeholder="enter your name" />
+                <div class="input-styling"></div>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="#" class="btn highlighted" (click)="submitName($event)">Lets start <div class="btn-style"></div> </a>
+            </div>
+
+            <div class="nameError" *ngIf="nameError" style="margin-top: 10px; font-size: 22px;">
+                Sir, I need your name to issue you a licence for a dragon!
+            </div>
+
+        </div>
+    </ng-container>
+
+        <stats-view *ngIf="state !== 0" [lives]="lives" [gold]="gold" [highScore]="highScore" [level]="level" [score]="score" [turn]="turn"></stats-view>
+
+        <default-view *ngIf="state === 1" [name]="playerName" [turn]="turn" [gold]="gold" [gameId]="gameId" (cPickQuest)="pickQuest()" (cInvestigate)="investigate()" (cShop)="shopping()"></default-view>
+
+        <quests-view *ngIf="state === 2" [name]="playerName" [quests]="allQuests" [turn]="turn" (cQuestPicked)="questPicked($event)" (cContinue)="changeState($event)"> </quests-view>
+
+        <quest-done-view *ngIf="state === 3" [name]="playerName" [lives]="lives" [feedback]="questFeedback" [success]="questSuccess" (cContinue)="changeState($event)" (cAnotherQuest)="pickQuest()"></quest-done-view>
+
+        <shop-view *ngIf="state === 4" [gold]="gold" [items]="shopItems" (cItemPurchased)="itemPurchased($event)" (cContinue)="changeState($event)"></shop-view>
+
+        <investigate-view *ngIf="state === 5" (cContinue)="changeState($event)" [people]="reputation_people" [state]="reputation_state" [underworld]="reputation_underworld"></investigate-view>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+
 
